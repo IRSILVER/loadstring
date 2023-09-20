@@ -1,8 +1,6 @@
-
-
 local whitelist = {
-    [480957690] = "staffkey2023" , 
-    [34234234234] = "premiumkey1" ,
+    [480957690] = "staffkey" , 
+    [2882896914] = "premiumkey" ,
     [234234] = "hwww" ,
 }
 
