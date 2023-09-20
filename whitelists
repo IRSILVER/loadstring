@@ -3,7 +3,7 @@
 local whitelist = {
     [123123] = "premiumkey1", -- Replace with actual UserIds and keys
     [480957690] = "premiumkey2",
-    [132413241] = "hwww"
+    [132413241] = "hwww",
     -- Add more UserIds and keys as needed
 }
 
