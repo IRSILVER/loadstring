@@ -1,4 +1,9 @@
 local dailyk = "test"
+local premiumkeys = {
+    "2342i34opi23p4io23",
+    "234234",
+    "456546456456"
+}
 
 local function done()
     local url = "https://raw.githubusercontent.com/IRSILVER/loadstring/main/success" 
@@ -19,7 +24,16 @@ sendnoti("Checking Key..", 4)
 
 if _G.key then
     local loweredk = string.lower(_G.key)
-    if loweredk == dailyk then
+    local isPremiumKey = false
+
+    for _, key in ipairs(premiumkeys) do
+        if loweredk == key then
+            isPremiumKey = true
+            break
+        end
+    end
+
+    if loweredk == dailyk or isPremiumKey then
         sendnoti("Correct Key Loading Script...", 4)
         done()
     else
