@@ -1,1 +1,2 @@
-
+_G.key = "Your key here" -- get the key from discord.gg/invitehere
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/keycheck"))() -- obfuscate this
