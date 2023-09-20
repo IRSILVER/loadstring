@@ -1,12 +1,18 @@
-local dailyk = "test"
-local premiumkeys = {
-    "2342i34opi23p4io23",
-    "234234",
-    "456546456456"
-}
+-- Your main script
 
+-- Load the keylist.lua script from an external source using loadstring
+local keylistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/keylist.lua")
+local keylist = loadstring(keylistString)()
+
+-- Access the daily key
+local dailyk = keylist.daily
+
+-- Access the premium keys
+local premiumkeys = keylist.premium
+
+-- Continue with your script logic
 local function done()
-    local url = "https://raw.githubusercontent.com/IRSILVER/loadstring/main/success" 
+    local url = "https://github.com/IRSILVER/loadstring/blob/main/success" 
     loadstring(game:HttpGet(url))()
 end
 
@@ -24,15 +30,15 @@ sendnoti("Checking Key..", 4)
 
 if _G.key then
     local loweredk = string.lower(_G.key)
+    
     local isPremiumKey = false
-
     for _, key in ipairs(premiumkeys) do
         if loweredk == key then
             isPremiumKey = true
             break
         end
     end
-
+    
     if loweredk == dailyk or isPremiumKey then
         sendnoti("Correct Key Loading Script...", 4)
         done()
