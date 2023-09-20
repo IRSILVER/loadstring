@@ -1,3 +1,14 @@
+-- Custom function to find an element in a table
+function tableFind(tbl, value)
+    for _, v in pairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
+-- Load the keylist
 local keylistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/keylist.lua")
 local keylist = loadstring(keylistString)()
 
@@ -6,6 +17,10 @@ local dailyk = keylist.daily
 
 -- Access the premium keys
 local premiumkeys = keylist.premium
+
+-- Load the whitelist
+local whitelistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/whitelists") 
+local whitelist = loadstring(whitelistString)()
 
 -- Continue with your script logic
 local function done()
@@ -36,9 +51,21 @@ if _G.key then
         end
     end
     
-    if loweredk == dailyk or isPremiumKey then
+    if loweredk == dailyk then
+        -- This is the daily key, proceed as usual
         sendnoti("Correct Key Loading Script...", 4)
         done()
+    elseif isPremiumKey then
+        -- Check if the player's UserId is whitelisted and get the associated key
+        local player = game.Players.LocalPlayer
+        local whitelistedKey = whitelist[player.UserId]
+        if whitelistedKey and whitelistedKey == loweredk then
+            sendnoti("Correct Key Loading Script...", 4)
+            done()
+        else
+            -- Kick the player if their UserId is not whitelisted or the key is incorrect
+            player:Kick("You are not whitelisted to use this premium key.")
+        end
     else
         sendnoti("Incorrect Key, Get The Correct Key From The Discord.", 5)
     end
