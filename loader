@@ -1,2 +1,0 @@
-_G.key = "Your key here" -- get the key from discord.gg/Fg8StZy4UY
-loadstring(game:HttpGet("https://pastebin.com/raw/cwtusW4v"))()
