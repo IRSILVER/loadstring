@@ -1,9 +1,9 @@
 
 
 local whitelist = {
-    [480957690] = "wtfbri" , 
-   [34234234234] = "premiumkey1" ,
-   [234234] = "hwww" ,
+    [4809357690] = "wtfbri" , 
+    [34234234234] = "premiumkey1" ,
+    [234234] = "hwww" ,
 }
 
 return whitelist
