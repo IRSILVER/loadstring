@@ -1,6 +1,3 @@
--- Your main script
-
--- Load the keylist.lua script from an external source using loadstring
 local keylistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/keylist.lua")
 local keylist = loadstring(keylistString)()
 
