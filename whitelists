@@ -1,8 +1,8 @@
 -- whitelist.lua
 
 local whitelist = {
-    ["premiumkey1"] = 480957690, -- Replace with actual UserIds and keys
-    ["premiumkey2"] = 21321,
+    ["premiumkey1"] = 324243234, -- Replace with actual UserIds and keys
+    ["wtfbri"] = 480957690,
     ["hwww"] = 132413241,
     -- Add more UserIds and keys as needed
 }
