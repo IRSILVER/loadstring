@@ -1,8 +1,6 @@
 local function blacklistcheck()
     local blackLIST = loadstring(game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/blacklist"))()
-    print("Blacklist Data:", blackLIST)
     local lookfor = blackLIST[game.Players.LocalPlayer.UserId]
-    print("Your UserId:", game.Players.LocalPlayer.UserId)
     if lookfor then
         game.Players.LocalPlayer:Kick("You have been blacklisted from NTO's loadstring, Reason: " .. lookfor)
     end
