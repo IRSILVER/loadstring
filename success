@@ -10,7 +10,7 @@ end
 
 -- Define supported games with names and URLs to load
 local supportedgames = {
-    ["Game One"] = 38942093,
+    ["Drag Project"] = 11568403922,
     ["Game Two"] = 1231231,
     ["Game Three"] = 123123,
     ["Game Four"] = 1231234,
@@ -19,8 +19,8 @@ local supportedgames = {
 
 -- Define URLs for supported games
 local gameURLs = {
-    ["Game One"] = "URL_TO_GAME_ONE_SCRIPT",
-    -- Add URLs for other games here
+    ["Drag Project"] = "https://raw.githubusercontent.com/IRSILVER/scripts/main/loadstring4",
+    
 }
 
 local CoreGui = game:GetService("StarterGui")
