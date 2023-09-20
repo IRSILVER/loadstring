@@ -1,14 +1,17 @@
--- Custom function to find an element in a table
-function tableFind(tbl, value)
-    for _, v in pairs(tbl) do
-        if v == value then
-            return true
-        end
+local function blacklistcheck()
+    local blackLIST = loadstring(game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/blacklist"))()
+    local lookfor = blackLIST[game.Players.LocalPlayer.UserId]
+    if lookfor then
+    print("player blacklisted.")
+        game.Players.LocalPlayer:Kick("You have been blacklisted from NTO's loadstring, Reason: " .. lookfor)
+    else
+    print("Not blacklisted, Moving on")
     end
-    return false
 end
 
--- Load the keylist
+blacklistcheck()
+
+
 local keylistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/keylist.lua")
 local keylist = loadstring(keylistString)()
 
@@ -19,7 +22,7 @@ local dailyk = keylist.daily
 local premiumkeys = keylist.premium
 
 -- Load the whitelist
-local whitelistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/whitelists") 
+local whitelistString = game:HttpGet("https://raw.githubusercontent.com/IRSILVER/loadstring/main/whitelists") -- Replace with the actual URL
 local whitelist = loadstring(whitelistString)()
 
 -- Continue with your script logic
@@ -50,25 +53,20 @@ if _G.key then
             break
         end
     end
-    
     if loweredk == dailyk then
-        -- This is the daily key, proceed as usual
+    sendnoti("Correct Key Loading Script...", 4)
+    done()
+elseif isPremiumKey == true then
+    local player = game.Players.LocalPlayer
+    local associatedKey = whitelist[player.UserId]
+    if associatedKey and associatedKey == loweredk then
         sendnoti("Correct Key Loading Script...", 4)
         done()
-    elseif isPremiumKey then
-        -- Check if the player's UserId is whitelisted and get the associated key
-        local player = game.Players.LocalPlayer
-        local whitelistedKey = whitelist[player.UserId]
-        if whitelistedKey and whitelistedKey == loweredk then
-            sendnoti("Correct Key Loading Script...", 4)
-            done()
-        else
-            -- Kick the player if their UserId is not whitelisted or the key is incorrect
-            player:Kick("You are not whitelisted to use this premium key.")
-        end
     else
-        sendnoti("Incorrect Key, Get The Correct Key From The Discord.", 5)
+        player:Kick("Your user id is not whitelisted with the used premium key, sharing your key could get you blacklisted!")
     end
 else
-    sendnoti("_G.key returned nil, Please enter a key or try rejoining.", 10)
+    sendnoti("Incorrect Key, Get The Correct Key From The Discord.", 5)
 end
+end
+
