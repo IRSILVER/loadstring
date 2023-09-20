@@ -1,1 +1,69 @@
+-- Custom function to find an element in a table
+function tableFind(tbl, value)
+    for _, v in pairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
 
+-- Define supported games with names and URLs to load
+local supportedgames = {
+    ["Game One"] = 38942093,
+    ["Game Two"] = 1231231,
+    ["Game Three"] = 123123,
+    ["Game Four"] = 1231234,
+    ["Game Five"] = 21312312
+}
+
+-- Define URLs for supported games
+local gameURLs = {
+    ["Game One"] = "URL_TO_GAME_ONE_SCRIPT",
+    -- Add URLs for other games here
+}
+
+local CoreGui = game:GetService("StarterGui")
+
+local function sendnoti(desc, tijd)
+    CoreGui:SetCore("SendNotification", {
+        Title = "NTO'S LOADSTRING";
+        Text = desc;
+        Duration = tijd;
+    })
+end
+
+sendnoti("Checking if game is supported..", 3)
+
+-- Get the current game's PlaceId
+local placeId = game.PlaceId
+
+if tableFind(supportedgames, placeId) then
+    -- Find the game name based on the PlaceId
+    local supportedGameName
+    for gameName, gameID in pairs(supportedgames) do
+        if gameID == placeId then
+            supportedGameName = gameName
+            break
+        end
+    end
+
+    if supportedGameName then
+        local gameURL = gameURLs[supportedGameName]
+        if gameURL then
+            sendnoti("Game " .. supportedGameName .. " is supported, Loading script..", 3)
+            local loadstringFunction = loadstring(game:HttpGet(gameURL))
+            if loadstringFunction then
+                loadstringFunction() -- Execute the loadstring
+            else
+                sendnoti("Failed to load the script.", 3)
+            end
+        else
+            sendnoti("Game is supported, but no script URL found.", 3)
+        end
+    else
+        sendnoti("Game supported, Loading script..", 3)
+    end
+else
+    sendnoti("Game not supported, Please join the discord to see list of supported games.", 5)
+end
