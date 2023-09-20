@@ -11,8 +11,8 @@ end
 -- Define supported games with names and URLs to load
 local supportedgames = {
     ["Drag Project"] = 11568403922,
-    ["Game Two"] = 1231231,
-    ["Game Three"] = 123123,
+    ["Energy Simulator"] = 13335973644,
+    ["Dingus"] = 13924946576,
     ["Game Four"] = 1231234,
     ["Game Five"] = 21312312
 }
@@ -20,7 +20,8 @@ local supportedgames = {
 -- Define URLs for supported games
 local gameURLs = {
     ["Drag Project"] = "https://raw.githubusercontent.com/IRSILVER/scripts/main/loadstring4",
-    
+    ["Energy Simulator"] = "https://raw.githubusercontent.com/IRSILVER/scripts/main/loadstring2",
+    ["Dingus"] = "https://raw.githubusercontent.com/IRSILVER/scripts/main/loadstring3",
 }
 
 local CoreGui = game:GetService("StarterGui")
@@ -34,6 +35,7 @@ local function sendnoti(desc, tijd)
 end
 
 sendnoti("Checking if game is supported..", 3)
+wait(3)
 
 -- Get the current game's PlaceId
 local placeId = game.PlaceId
@@ -52,6 +54,7 @@ if tableFind(supportedgames, placeId) then
         local gameURL = gameURLs[supportedGameName]
         if gameURL then
             sendnoti("Game " .. supportedGameName .. " is supported, Loading script..", 3)
+            wait(2)
             local loadstringFunction = loadstring(game:HttpGet(gameURL))
             if loadstringFunction then
                 loadstringFunction() -- Execute the loadstring
@@ -62,7 +65,7 @@ if tableFind(supportedgames, placeId) then
             sendnoti("Game is supported, but no script URL found.", 3)
         end
     else
-        sendnoti("Game supported, Loading script..", 3)
+        
     end
 else
     sendnoti("Game not supported, Please join the discord to see list of supported games.", 5)
