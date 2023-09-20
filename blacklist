@@ -1,5 +1,5 @@
 local blacklist = {
-[480957690] = "Sharing keys",
+[12] = "Sharing keys",
 [0] = "no",
 }
 
