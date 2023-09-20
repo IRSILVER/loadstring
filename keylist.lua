@@ -6,9 +6,9 @@ keylist.daily = "testwhat"
 
 -- Define the premium keys
 keylist.premium = {
-    "premiumkey2",
+    "premiumkey1",
     "wtfbri",
-    "fhfhsieieieieirieiwiskdkdk",
+    "hwww",
     -- Add more premium keys as needed
 }
 
