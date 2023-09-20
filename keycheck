@@ -1,0 +1,30 @@
+local dailyk = "test"
+
+local function done()
+    local url = "stringcheckpoint2" 
+    loadstring(game:HttpGet(url))()
+end
+
+local CoreGui = game:GetService("StarterGui")
+
+local function sendnoti(desc, tijd)
+    CoreGui:SetCore("SendNotification", {
+        Title = "NTO'S LOADSTRING";
+        Text = desc;
+        Duration = tijd;
+    })
+end
+
+sendnoti("Checking Key..", 4)
+
+if _G.key then
+    local loweredk = string.lower(_G.key)
+    if loweredk == dailyk then
+        sendnoti("Correct Key Loading Script...", 4)
+        done()
+    else
+        sendnoti("Incorrect Key, Get The Correct Key From The Discord.", 5)
+    end
+else
+    sendnoti("_G.key returned nil, Please enter a key or try rejoining.", 10)
+end
