@@ -1,7 +1,7 @@
 local whitelist = {
     [480957690] = "staffkey" , 
     [2882896914] = "premiumkey" ,
-    [234234] = "hwww" ,
+    [2534185430] = "BeijingHack" ,
 }
 
 return whitelist
