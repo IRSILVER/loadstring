@@ -7,7 +7,7 @@ keylist.daily = "fDaxEYRY"
 keylist.premium = {
     "premiumkey",
     "staffkey",
-    "hwww",
+    "BeijingHack",
     -- Add more premium keys as needed
 }
 
