@@ -1,7 +1,7 @@
 local keylist = {}
 
 -- Define the daily key
-keylist.daily = "fDaxEYRY"
+keylist.daily = "cTViNDo"
 
 -- Define the premium keys
 keylist.premium = {
