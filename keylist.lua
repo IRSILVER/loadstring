@@ -9,6 +9,7 @@ keylist.premium = {
     "staffkey",
     "BeijingHack",
     "VynzPro",
+    "aisygg"
     -- Add more premium keys as needed
 }
 
