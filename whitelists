@@ -5,6 +5,7 @@ local whitelist = {
     [1223749261] = "VynzPro",
     [3161680416] = "aisygg",
     [1458719572] = "wxckfeenedout",
+    [198376034] = "buzzerdeezzer",
 }
 
 return whitelist
