@@ -4,6 +4,7 @@ local whitelist = {
     [2534185430] = "BeijingHack" ,
     [1223749261] = "VynzPro",
     [3161680416] = "aisygg",
+    [1458719572] = "wxckfeenedout",
 }
 
 return whitelist
