@@ -6,6 +6,7 @@ local whitelist = {
     [3161680416] = "aisygg",
     [1458719572] = "wxckfeenedout",
     [198376034] = "buzzerdeezzer",
+    [2342057652] = "deeznut", 
 }
 
 return whitelist
