@@ -11,7 +11,8 @@ keylist.premium = {
     "VynzPro",
     "aisygg",
     "wxckfeenedout",
-    "buzzerdeezzer"
+    "buzzerdeezzer",
+    "deeznut" 
     -- Add more premium keys as needed
 }
 
